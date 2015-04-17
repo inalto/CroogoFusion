@@ -41,3 +41,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+#SyncFusion
+webroot/js/common
+webroot/js/cultures
+webroot/js/datavisualization
+webroot/js/mobile
+webroot/js/web
+webroot/js/ej.widget.all.min.js
