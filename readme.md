@@ -10,6 +10,7 @@ Unpack the syncfusionessentialjavascript.zip and put the content inside the asse
 
 the directory tree should be something like this
 
+<pre>
 CroogoFusion
 └── webroot
     ├── css
@@ -65,5 +66,6 @@ CroogoFusion
         ├── datavisualization
         ├── mobile
         └── web
+</pre>
 
 ## Links
