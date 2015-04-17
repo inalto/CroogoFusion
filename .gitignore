@@ -50,3 +50,5 @@ webroot/js/datavisualization
 webroot/js/mobile
 webroot/js/web
 webroot/js/ej.widget.all.min.js
+webroot/css/mobile
+webroot/css/web
