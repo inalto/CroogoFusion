@@ -1,6 +1,6 @@
 # Croogo Fusion
 
-Croogo plugin with cake helpers to add HTML5/Javascript functionalities from the [http://www.syncfusion.com](SyncFusion) Framework,  [https://www.syncfusion.com/products/communitylicense](Community License).
+Croogo plugin with cake helpers to add HTML5/Javascript functionalities from the [SyncFusion](http://www.syncfusion.com) Framework,  [Community License](https://www.syncfusion.com/products/communitylicense).
 
 Requires CakePHP 2.6.x or Croogo 2.2.x
 

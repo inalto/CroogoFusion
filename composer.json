@@ -1,0 +1,13 @@
+{
+    "name": "inalto/croogo-fusion",
+    "description": "Croogo SyncFusion widget helpers",
+    "homepage": "http://github.com/inalto/CroogoFusion",
+    "license": "MIT",	
+     "require": {
+        "php": ">=5.3.0",
+        "croogo/croogo": "2.2.*"
+    },
+    "config": {
+		"vendor-dir": "Plugin"
+	}
+}
