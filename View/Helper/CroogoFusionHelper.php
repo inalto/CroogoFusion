@@ -58,9 +58,63 @@ class CroogoFusionHelper extends AppHelper {
 
 public function textbox ($id,$options = array(),$jsoptions = array()) {
 		
+<<<<<<< HEAD
 		$this->styleSet($options);
 		$this->javascriptSet($options);
 
+=======
+	//	var_dump($this->request->data);
+	//	var_dump($this->request->data[$this->Form->defaultModel][$id]);
+	//	var_dump($this->Form->defaultModel);
+
+		$this->styleSet($options);
+		$this->javascriptSet($options);
+
+
+		if (isset($jsoptions['name'])) {
+		
+		switch(strtolower($jsoptions['name'])) {
+
+			case "numeric":
+			$this->function = "ejNumericTextbox";
+			break;
+			case "percentage":
+			$this->function = "ejPercentageTextbox";
+			break;
+			case "currency":
+			$this->function = "ejCurrencyTextbox";
+			break;
+			case "mask":
+			$this->function = "ejMaskEdit";
+			break;
+			}
+		}
+$value="\"\"";
+if (isset($options['value'])){
+	$value=$options['value'];
+}
+if (isset($this->request->data[$this->Form->defaultModel][$id])){
+	$value=$this->request->data[$this->Form->defaultModel][$id];
+}
+ $options['type']="text";
+		$output=$this->Form->input($id,$options);
+
+//.json_encode($jsoptions,JSON_FORCE_OBJECT)
+		$output.=$this->Html->scriptBlock("$(document).ready(function(){
+		
+			$('#".$this->genId($id)."').".$this->function."( {value:".
+
+				$value.
+			   ",name:\"".$jsoptions['name']."\"".
+				"});
+
+	});", array("inline"=>false));
+		
+		return $output;
+		//.Debugger::dump($this);;
+
+}
+>>>>>>> 25c3f8a020a5a450029ab884b918662eed72bb74
 
 		if (isset($jsoptions['name'])) {
 		
@@ -94,6 +148,11 @@ public function textbox ($id,$options = array(),$jsoptions = array()) {
 
 }
 
+
+	public function datepicker ($id,$options = array(),$jsoptions = array()) {
+	
+		$this->themeSet($options);
+		$this->javascriptSet($options);
 
 	public function datepicker ($id,$options = array(),$jsoptions = array()) {
 	
