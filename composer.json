@@ -1,13 +1,95 @@
 {
     "name": "inalto/croogo-fusion",
+     "type": "croogo-plugin",
     "description": "Croogo SyncFusion widget helpers",
     "homepage": "http://github.com/inalto/CroogoFusion",
-    "license": "MIT",	
+    "keywords": ["cakephp", "croogo", "plugin","helper","syncfusion"],
+    "license": "MIT",
+      "authors": [
+    {
+      "name": "Martini Multimedia s.a.s.",
+      "email": "webmaster@inalto.com",
+      "homepage": "http://github.com/inalto/"
+    }
+  ],
      "require": {
         "php": ">=5.3.0",
-        "croogo/croogo": "2.2.*"
+        "croogo/croogo": "~2.1",
+    "cakephp/cakephp": "~2.5"
     },
-    "config": {
-		"vendor-dir": "Plugin"
-	}
+  "extra": {
+    "installer-name": "CroogoFusion"
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
