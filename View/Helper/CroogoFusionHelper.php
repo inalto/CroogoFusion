@@ -58,11 +58,9 @@ class CroogoFusionHelper extends AppHelper {
 
 public function textbox ($id,$options = array(),$jsoptions = array()) {
 		
-<<<<<<< HEAD
 		$this->styleSet($options);
 		$this->javascriptSet($options);
 
-=======
 	//	var_dump($this->request->data);
 	//	var_dump($this->request->data[$this->Form->defaultModel][$id]);
 	//	var_dump($this->Form->defaultModel);
