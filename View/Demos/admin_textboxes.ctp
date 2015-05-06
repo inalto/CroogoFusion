@@ -6,17 +6,11 @@ echo $this->Form->create('Demo');
 
 echo $this->CroogoFusion->textbox(
 				'numeric',
-<<<<<<< HEAD
+
 				array(),
 				array(
 					"name"=>"numeric",
 					"value"=>35,
-=======
-				array("value"=>35),
-				array(
-					"name"=>"numeric",
-					
->>>>>>> 25c3f8a020a5a450029ab884b918662eed72bb74
 					"minValue"=>0
 					)
 				);
@@ -24,17 +18,10 @@ echo $this->CroogoFusion->textbox(
 <pre>
 echo $this->CroogoFusion->textbox(
 				'numeric',
-<<<<<<< HEAD
 				array(),
 				array(
 					"name"=>"numeric",
 					"value"=>35,
-=======
-				array("value"=>35),
-				array(
-					"name"=>"numeric",
-					
->>>>>>> 25c3f8a020a5a450029ab884b918662eed72bb74
 					"minValue"=>0
 					)
 				);
@@ -42,17 +29,10 @@ echo $this->CroogoFusion->textbox(
 <?php
 echo $this->CroogoFusion->textbox(
 				'percent',
-<<<<<<< HEAD
 				array(),
 				array(
 					"name"=>"percentage",
 					"value"=>3,
-=======
-				array("value"=>3),
-				array(
-					"name"=>"percentage",
-					
->>>>>>> 25c3f8a020a5a450029ab884b918662eed72bb74
 					"minValue"=>0
 					)
 				);
@@ -71,17 +51,10 @@ echo $this->CroogoFusion->textbox(
 <?php
 echo $this->CroogoFusion->textbox(
 				'currency',
-<<<<<<< HEAD
 				array(),
 				array(
 					"name"=>"currency",
 					"value"=>555
-=======
-				array("value"=>555),
-				array(
-					"name"=>"currency"
-					
->>>>>>> 25c3f8a020a5a450029ab884b918662eed72bb74
 					)
 				);
 ?>
