@@ -1,9 +1,6 @@
 <?php
 Croogo::hookHelper('*', 'CroogoFusion.CroogoFusion');
 
-Croogo::hookRoutes('Emailmanager');
-
-
 /**
  * Admin menu (navigation)
  */

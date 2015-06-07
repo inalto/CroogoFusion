@@ -58,10 +58,6 @@ class CroogoFusionHelper extends AppHelper {
 
 public function textbox ($id,$options = array(),$jsoptions = array()) {
 		
-	//	var_dump($this->request->data);
-	//	var_dump($this->request->data[$this->Form->defaultModel][$id]);
-	//	var_dump($this->Form->defaultModel);
-
 		$this->styleSet($options);
 		$this->javascriptSet($options);
 
@@ -84,24 +80,12 @@ public function textbox ($id,$options = array(),$jsoptions = array()) {
 			break;
 			}
 		}
-$value="\"\"";
-if (isset($options['value'])){
-	$value=$options['value'];
-}
-if (isset($this->request->data[$this->Form->defaultModel][$id])){
-	$value=$this->request->data[$this->Form->defaultModel][$id];
-}
- $options['type']="text";
+
 		$output=$this->Form->input($id,$options);
 
-//.json_encode($jsoptions,JSON_FORCE_OBJECT)
 		$output.=$this->Html->scriptBlock("$(document).ready(function(){
 		
-			$('#".$this->genId($id)."').".$this->function."( {value:".
-
-				$value.
-			   ",name:\"".$jsoptions['name']."\"".
-				"});
+			$('#".$this->genId($id)."').".$this->function."(".json_encode($jsoptions,JSON_FORCE_OBJECT).");
 
 	});", array("inline"=>false));
 		
@@ -113,7 +97,7 @@ if (isset($this->request->data[$this->Form->defaultModel][$id])){
 
 	public function datepicker ($id,$options = array(),$jsoptions = array()) {
 	
-		$this->themeSet($options);
+		$this->styleSet($options);
 		$this->javascriptSet($options);
 
 		$options = Hash::merge(array(
@@ -133,11 +117,13 @@ if (isset($this->request->data[$this->Form->defaultModel][$id])){
 
 	//	var_dump(json_encode($jsoptions,JSON_FORCE_OBJECT));
 	
+		//var_dump($options);
+
 		$output.=$this->Html->scriptBlock("$(function(){
 			var data ='".json_encode($jsoptions)."';
 			var jsonobject=JSON.parse(data);
 		
-			jsonobject.value=$('#".$this->domId($options)."').val();
+			jsonobject.value=$('#".$this->genId($id)."').val();
 			$('#".$this->genId($id)."').ejDatePicker(jsonobject);
 
 	});", array("inline"=>false));
