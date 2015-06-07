@@ -97,7 +97,7 @@ public function textbox ($id,$options = array(),$jsoptions = array()) {
 
 	public function datepicker ($id,$options = array(),$jsoptions = array()) {
 	
-		$this->themeSet($options);
+		$this->styleSet($options);
 		$this->javascriptSet($options);
 
 		$options = Hash::merge(array(
@@ -117,11 +117,13 @@ public function textbox ($id,$options = array(),$jsoptions = array()) {
 
 	//	var_dump(json_encode($jsoptions,JSON_FORCE_OBJECT));
 	
+		//var_dump($options);
+
 		$output.=$this->Html->scriptBlock("$(function(){
 			var data ='".json_encode($jsoptions)."';
 			var jsonobject=JSON.parse(data);
 		
-			jsonobject.value=$('#".$this->domId($options)."').val();
+			jsonobject.value=$('#".$this->genId($id)."').val();
 			$('#".$this->genId($id)."').ejDatePicker(jsonobject);
 
 	});", array("inline"=>false));
