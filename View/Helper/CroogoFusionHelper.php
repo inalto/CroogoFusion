@@ -180,5 +180,9 @@ $this->Html->script(array("/CroogoFusion/js/jsrender.min"), array("inline"=>fals
 		return Inflector::classify($this->params['controller']).Inflector::camelize($id);
 	}
 
+	
+
+
+
 }
 
