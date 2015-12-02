@@ -4,6 +4,8 @@ Croogo::hookHelper('*', 'CroogoFusion.CroogoFusion');
 /**
  * Admin menu (navigation)
  */
+
+/*
 CroogoNav::add('SyncFusion', array(
 	'icon' => array('envelope', 'large'),
 	'title' => 'SyncFusion',
@@ -30,7 +32,30 @@ CroogoNav::add('SyncFusion', array(
 				'action' => 'schedule'
 				),
 			
+		),
+		'datepicker' => array(
+			'title' => 'DatePicker',
+			'url' =>  array(
+				'admin' => true,
+				'plugin' => 'croogo_fusion',
+				'controller' => 'demos',
+				'action' => 'datepicker'
+				),
+			
+		)
+		,
+		'datetimepicker' => array(
+			'title' => 'DateTimePicker',
+			'url' =>  array(
+				'admin' => true,
+				'plugin' => 'croogo_fusion',
+				'controller' => 'demos',
+				'action' => 'datetimepicker'
+				),
+			
 		)
 		)
 
 	));
+
+	*/
