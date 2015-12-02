@@ -289,6 +289,39 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 
 		return $output;
 	}
+
+	public function timepicker ($id,$options = array(),$jsoptions = array()) {
+
+		$this->styleSet($options);
+		
+		$js = array(
+			"/CroogoFusion/js/common/ej.scroller.min.js",
+			"/CroogoFusion/js/web/ej.timepicker.min.js",
+			"/CroogoFusion/js/web/ej.datetimepicker.min.js"
+		);
+
+		$this->javascriptSet($js);
+		$this->function="ejTimePicker";
+
+		$options = Hash::merge(array(
+			'class'=>'timepicker',
+			'type'=>'text',
+			),$options
+		);
+
+		$output=$this->Form->input($id,$options);
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+
+		return $output;
+	}
+
 /*
 * Rich text editor
 */
