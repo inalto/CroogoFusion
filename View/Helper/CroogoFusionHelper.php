@@ -52,7 +52,7 @@ class CroogoFusionHelper extends AppHelper {
 	private function javascriptSet($js) {
 
 		/*
-		* Base Javascript
+		* Base Javascripts
 		*/ 
 
 		$js = Hash::merge(array(
@@ -62,66 +62,109 @@ class CroogoFusionHelper extends AppHelper {
 				)
 				,$js
 			);
-
 		$this->Html->script($js, array("inline"=>false));
-
-
-/*		$this->Html->script(array("/CroogoFusion/js/jquery.globalize.min"), array("inline"=>false));
-		$this->Html->script(array("/CroogoFusion/js/cultures/globalize.culture.it-IT.js"), array("inline"=>false));
-		$this->Html->script(array("/CroogoFusion/js/jquery.easing.1.3.min"), array("inline"=>false));
-		$this->Html->script(array("/CroogoFusion/js/web/ej.web.all.min"), array("inline"=>false));		
-
-		*/
 		}
 
-public function textbox ($id,$options = array(),$jsoptions = array()) {
+
+public function numeric ($id,$options = array(),$jsoptions = array()) {
 		
 		$this->styleSet($options);
 
-
-
-
-		if (isset($jsoptions['name'])) {
-		
-		switch(strtolower($jsoptions['name'])) {
-
-			case "numeric":
-			$this->function = "ejNumericTextbox";
-			$js = array("/CroogoFusion/js/web/ej.editor.min.js");
-
-			break;
-			case "percentage":
-			$this->function = "ejPercentageTextbox";
-			$js = array("/CroogoFusion/js/web/ej.editor.min.js");
-
-			break;
-			case "currency":
-			$this->function = "ejCurrencyTextbox";
-			$js = array("/CroogoFusion/js/web/ej.editor.min.js");
-
-			break;
-			case "mask":
-			$this->function = "ejMaskEdit";
-			$js = array("/CroogoFusion/js/web/ej.maskedit.min.js");
-
-			break;
-			}
-		}
+		$this->function = "ejNumericTextbox";
+		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
 
 		$this->javascriptSet($js);
 
 
 		$output=$this->Form->input($id,$options);
 
-		$output.=$this->Html->scriptBlock("$(document).ready(function(){
-		
-			$('#".$this->genId($id)."').".$this->function."(".json_encode($jsoptions,JSON_FORCE_OBJECT).");
 
-	});", array("inline"=>false));
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
 		
 		return $output;
-		//.Debugger::dump($this);;
+}
 
+
+public function percent ($id,$options = array(),$jsoptions = array()) {
+		
+		$this->styleSet($options);
+
+		$this->function = "ejPercentageTextbox";
+		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
+
+		$this->javascriptSet($js);
+
+
+		$output=$this->Form->input($id,$options);
+
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+		
+		return $output;
+}
+
+public function currency ($id,$options = array(),$jsoptions = array()) {
+		
+		$this->styleSet($options);
+
+		$this->function = "ejMaskEdit";
+		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
+
+		$this->javascriptSet($js);
+
+
+		$output=$this->Form->input($id,$options);
+
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+		
+		return $output;
+}
+
+public function mask ($id,$options = array(),$jsoptions = array()) {
+		
+		$this->styleSet($options);
+
+		$this->function = "ejPercentageTextbox";
+		$js = array("/CroogoFusion/js/web/ej.maskedit.min.js");
+
+		$this->javascriptSet($js);
+
+
+		$output=$this->Form->input($id,$options);
+
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+		
+		return $output;
 }
 
 
@@ -158,7 +201,7 @@ public function textbox ($id,$options = array(),$jsoptions = array()) {
 		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
 		$script.=");});";
 
-$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
 
 		return $output;
 	}

@@ -4,91 +4,108 @@
 
 echo $this->Form->create('Demo');
 
-echo $this->CroogoFusion->textbox(
+echo $this->CroogoFusion->numeric(
 				'numeric',
 
 				array(),
 				array(
-					"name"=>"numeric",
-					"value"=>35,
-					"minValue"=>0
-					)
+					'jsobject'=>'{
+						name:"numeric",
+						value:35,
+						minValue:0	
+						}')
 				);
 ?>
 <pre>
-echo $this->CroogoFusion->textbox(
+echo $this->CroogoFusion->numeric(
 				'numeric',
+
 				array(),
 				array(
-					"name"=>"numeric",
-					"value"=>35,
-					"minValue"=>0
-					)
+					'jsobject'=>'{
+						name:"numeric",
+						value:35,
+						minValue:0	
+						}')
 				);
 </pre>
 <?php
-echo $this->CroogoFusion->textbox(
-				'percent',
-				array(),
-				array(
-					"name"=>"percentage",
-					"value"=>3,
-					"minValue"=>0
-					)
-				);
-?>
-<pre>
-echo $this->CroogoFusion->textbox(
+echo $this->CroogoFusion->percent(
 				'percentage',
 				array(),
 				array(
-					"name"=>"percent",
-					"value"=>3,
-					"minValue"=>0
-					)
-				);
-</pre>
-<?php
-echo $this->CroogoFusion->textbox(
-				'currency',
-				array(),
-				array(
-					"name"=>"currency",
-					"value"=>555
+					'jsobject'=>'{
+						name:"percentage",
+						value:3,
+						minValue:0	
+						}'
 					)
 				);
 ?>
 <pre>
-echo $this->CroogoFusion->textbox(
-				'currency',
+echo $this->CroogoFusion->percent(
+				'percentage',
 				array(),
 				array(
-					"name"=>"currency",
-					"value"=>555
-					
+					'jsobject'=>'{
+						name:"percentage",
+						value:3,
+						minValue:0	
+						}'
 					)
 				);
 </pre>
 <?php
-echo $this->CroogoFusion->textbox(
-				'mask',
+echo $this->CroogoFusion->currency(
+				'currency',
 				array(),
 				array(
-					"name"=>"mask",
-					"inputMode" => "ej.InputMode.Text",
-                    "maskFormat" => "99-999-99999"
+				'jsobject'=>'{
+						name:"currency",
+						value:555
+						}'
 					)
 				);
 ?>
 <pre>
-echo $this->CroogoFusion->textbox(
+echo $this->CroogoFusion->currency(
+				'currency',
+				array(),
+				array(
+				'jsobject'=>'{
+						name:"currency",
+						value:555
+						}'
+					)
+				);
+</pre>
+<?php
+echo $this->CroogoFusion->mask(
 				'mask',
 				array(),
 				array(
-					"name"=>"mask",
-					"inputMode" => "ej.InputMode.Text",
-                    "maskFormat" => "99-999-99999"
-					)
+					'jsobject'=>'{
+										name: "mask",
+                                        inputMode: ej.InputMode.Text,
+                                        maskFormat: "99-999-99999",
+                                        watermarkText: "99-999-99999",
+										width:"100%"
+									}
+					')
+				);
+?>
+<pre>
+echo $this->CroogoFusion->mask(
+				'mask',
+				array(),
+				array(
+					'jsobject'=>'{
+										name: "mask",
+                                        inputMode: ej.InputMode.Text,
+                                        maskFormat: "99-999-99999",
+                                        watermarkText: "99-999-99999",
+										width:"100%"
+									}')
 				);
 </pre>
 
