@@ -23,4 +23,7 @@ class DemosController extends CroogoFusionAppController {
 	public function admin_datetimepicker() {
 		
 	}
+	public function admin_slider() {
+		
+	}
 }

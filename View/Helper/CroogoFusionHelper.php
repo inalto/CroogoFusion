@@ -146,7 +146,7 @@ public function mask ($id,$options = array(),$jsoptions = array()) {
 		
 		$this->styleSet($options);
 
-		$this->function = "ejPercentageTextbox";
+		$this->function = "ejMaskEdit";
 		$js = array("/CroogoFusion/js/web/ej.maskedit.min.js");
 
 		$this->javascriptSet($js);
@@ -364,6 +364,45 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 
 		return $output;
 	}
+
+
+/*
+*
+*/
+
+	public function slider ($id,$options = array(),$jsoptions = array()) {
+
+		$this->styleSet($options);
+		
+		$js = array(
+			"/CroogoFusion/js/web/ej.slider.min.js",
+		);
+
+		$this->javascriptSet($js);
+		$this->function="ejSlider";
+
+		$options = Hash::merge(array(
+			'class'=>'ejslider',
+			'style'=>'display:none;',
+			'type'=>'text',
+			),$options
+		);
+
+		$output=$this->Form->input($id,$options).'<div class="wrapper"><div id="'.$this->genId($id).'-sl"></div></div>';
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."-sl').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+		$script.="function onchange(args) { $('#".$this->genId($id)."').val(args.value);}";
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+
+		return $output;
+	}
+
+
 
 /*
 * Rich text editor

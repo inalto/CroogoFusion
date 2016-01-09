@@ -40,8 +40,7 @@ CroogoNav::add('SyncFusion', array(
 				'action' => 'datepicker'
 				),
 			
-		)
-		,
+		),
 		'datetimepicker' => array(
 			'title' => 'DateTimePicker',
 			'url' =>  array(
@@ -51,7 +50,18 @@ CroogoNav::add('SyncFusion', array(
 				'action' => 'datetimepicker'
 				),
 			
+		),
+		'slider' => array(
+			'title' => 'Slider',
+			'url' =>  array(
+				'admin' => true,
+				'plugin' => 'croogo_fusion',
+				'controller' => 'demos',
+				'action' => 'slider'
+				),
 		)
+
+
 		)
 
 	));
