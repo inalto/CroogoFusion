@@ -22,7 +22,7 @@ class CroogoFusionHelper extends AppHelper {
 //		'Croogo.Layout',
 	);
 
-	private $themefusion = "default-theme";
+	private $themefusion = "bootstrap-theme";
 	private $function = null;
 
 
@@ -52,13 +52,13 @@ class CroogoFusionHelper extends AppHelper {
 	private function javascriptSet($js) {
 
 		/*
-		* Base Javascripts
+		* Base Javascript
 		*/ 
 
 		$js = Hash::merge(array(
-				"/CroogoFusion/js/jquery.globalize.min.js",
-				"/CroogoFusion/js/cultures/globalize.culture.it-IT.js",
-				"/CroogoFusion/js/common/ej.core.min.js"
+				"/CroogoFusion/js/common/ej.core.min.js",
+				"/CroogoFusion/js/common/ej.globalize.min.js",
+				"/CroogoFusion/js/cultures/ej.culture.it-IT.min.js",
 				)
 				,$js
 			);
@@ -488,6 +488,7 @@ public function schedule ($id,$options = array(),$jsoptions = array()) {
 			"/CroogoFusion/js/web/ej.datepicker.min.js",
 			"/CroogoFusion/js/web/ej.timepicker.min.js",
 			"/CroogoFusion/js/web/ej.datetimepicker.min.js",
+			"/CroogoFusion/js/web/ej.recurrenceeditor.min.js",
 			"/CroogoFusion/js/web/ej.schedule.min.js",
 			"/CroogoFusion/js/locale/ej.schedule.locale.it-IT.js"
 			);
