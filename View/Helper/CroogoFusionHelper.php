@@ -46,7 +46,7 @@ class CroogoFusionHelper extends AppHelper {
 		if (array_key_exists("theme", $options)) {
 			$this->themefusion=$options['theme'];
 		}
-		$this->Html->css("/CroogoFusion/css/web/".$this->themefusion."/ej.widgets.all.min",  array("inline"=>false));
+		$this->Html->css("/CroogoFusion/css/ej/web/".$this->themefusion."/ej.widgets.all.min",  array("inline"=>false));
 	}
 
 	private function javascriptSet($js) {
@@ -56,9 +56,9 @@ class CroogoFusionHelper extends AppHelper {
 		*/ 
 
 		$js = Hash::merge(array(
-				"/CroogoFusion/js/common/ej.core.min.js",
-				"/CroogoFusion/js/common/ej.globalize.min.js",
-				"/CroogoFusion/js/cultures/ej.culture.it-IT.min.js",
+				"/CroogoFusion/js/ej/common/ej.core.min.js",
+				"/CroogoFusion/js/ej/common/ej.globalize.min.js",
+				"/CroogoFusion/js/ej/i18n/ej.culture.it-IT.min.js",
 				)
 				,$js
 			);
@@ -71,7 +71,7 @@ public function numeric ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$this->function = "ejNumericTextbox";
-		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
+		$js = array("/CroogoFusion/js/ej/web/ej.editor.min.js");
 
 		$this->javascriptSet($js);
 
@@ -97,7 +97,7 @@ public function percent ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$this->function = "ejPercentageTextbox";
-		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
+		$js = array("/CroogoFusion/js/ej/web/ej.editor.min.js");
 
 		$this->javascriptSet($js);
 
@@ -122,7 +122,7 @@ public function currency ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$this->function = "ejMaskEdit";
-		$js = array("/CroogoFusion/js/web/ej.editor.min.js");
+		$js = array("/CroogoFusion/js/ej/web/ej.editor.min.js");
 
 		$this->javascriptSet($js);
 
@@ -147,7 +147,7 @@ public function mask ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$this->function = "ejMaskEdit";
-		$js = array("/CroogoFusion/js/web/ej.maskedit.min.js");
+		$js = array("/CroogoFusion/js/ej/web/ej.maskedit.min.js");
 
 		$this->javascriptSet($js);
 
@@ -179,8 +179,8 @@ public function mask ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$js = array(
-			"/CroogoFusion/js/common/ej.data.min.js",
-			"/CroogoFusion/js/web/ej.autocomplete.min.js",
+			"/CroogoFusion/js/ej/common/ej.data.min.js",
+			"/CroogoFusion/js/ej/web/ej.autocomplete.min.js",
 			);
 
 		$this->log(print_r($this->data,true));
@@ -214,11 +214,11 @@ public function mask ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 
 		$js = array(
-			"/CroogoFusion/js/web/ej.button.min.js",
-			"/CroogoFusion/js/web/ej.splitbutton.min.js",
-			"/CroogoFusion/js/web/ej.menu.min.js",
-			"/CroogoFusion/js/web/ej.slider.min.js",
-			"/CroogoFusion/js/web/ej.colorpicker.min.js"
+			"/CroogoFusion/js/ej/web/ej.button.min.js",
+			"/CroogoFusion/js/ej/web/ej.splitbutton.min.js",
+			"/CroogoFusion/js/ej/web/ej.menu.min.js",
+			"/CroogoFusion/js/ej/web/ej.slider.min.js",
+			"/CroogoFusion/js/ej/web/ej.colorpicker.min.js"
 			);
 
 		$this->javascriptSet($js);
@@ -264,7 +264,7 @@ $options['value'] = $this->data[Inflector::classify( $this->params['controller']
 		
 
 		$js = array(
-			"/CroogoFusion/js/web/ej.datepicker.min.js"
+			"/CroogoFusion/js/ej/web/ej.datepicker.min.js"
 			);
 
 		$this->javascriptSet($js);
@@ -305,10 +305,10 @@ $options['value'] = $this->data[Inflector::classify( $this->params['controller']
 		$this->styleSet($options);
 		
 		$js = array(
-			"/CroogoFusion/js/common/ej.scroller.min.js",
-			"/CroogoFusion/js/web/ej.datepicker.min.js",
-			"/CroogoFusion/js/web/ej.timepicker.min.js",
-			"/CroogoFusion/js/web/ej.datetimepicker.min.js"
+			"/CroogoFusion/js/ej/common/ej.scroller.min.js",
+			"/CroogoFusion/js/ej/web/ej.datepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.timepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.datetimepicker.min.js"
 			);
 
 		$this->javascriptSet($js);
@@ -338,9 +338,9 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 		$this->styleSet($options);
 		
 		$js = array(
-			"/CroogoFusion/js/common/ej.scroller.min.js",
-			"/CroogoFusion/js/web/ej.timepicker.min.js",
-			"/CroogoFusion/js/web/ej.datetimepicker.min.js"
+			"/CroogoFusion/js/ej/common/ej.scroller.min.js",
+			"/CroogoFusion/js/ej/web/ej.timepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.datetimepicker.min.js"
 		);
 
 		$this->javascriptSet($js);
@@ -375,7 +375,7 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 		$this->styleSet($options);
 		
 		$js = array(
-			"/CroogoFusion/js/web/ej.slider.min.js",
+			"/CroogoFusion/js/ej/web/ej.slider.min.js",
 		);
 
 		$this->javascriptSet($js);
@@ -402,7 +402,36 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 		return $output;
 	}
 
+/*
+*
+*/
 
+	public function signature ($id,$options = array(),$jsoptions = array()) {
+
+		$this->styleSet($options);
+		
+		$js = array(
+			"/CroogoFusion/js/ej/web/ej.signature.min.js",
+		);
+
+		$this->javascriptSet($js);
+		$this->function="ejSignature";
+
+		
+
+		$output='<div class="control"><div id="'.$this->genId($id).'"></div></div>';
+
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+
+		return $output;
+	}
 
 /*
 * Rich text editor
@@ -414,34 +443,34 @@ public function RichTextEditor ($id,$options = array(),$jsoptions = array()) {
 	$this->styleSet($options);
 
 	$js = array(
-			"/CroogoFusion/js/common/ej.scroller.min.js",
-			"/CroogoFusion/js/common/ej.draggable.min.js",
-			"/CroogoFusion/js/common/ej.data.min.js",
-			"/CroogoFusion/js/web/ej.rte.min.js",
-			"/CroogoFusion/js/web/ej.button.min.js",
-			"/CroogoFusion/js/web/ej.togglebutton.min.js",
-			"/CroogoFusion/js/web/ej.colorpicker.min.js",
-			"/CroogoFusion/js/web/ej.slider.min.js",
-			"/CroogoFusion/js/web/ej.splitbutton.min.js",
-			"/CroogoFusion/js/web/ej.checkbox.min.js",
-			"/CroogoFusion/js/web/ej.radiobutton.min.js",
-			"/CroogoFusion/js/web/ej.dropdownlist.min.js",
-			"/CroogoFusion/js/web/ej.dialog.min.js",
-			"/CroogoFusion/js/web/ej.toolbar.min.js",
-			"/CroogoFusion/js/web/ej.editor.min.js",
-			"/CroogoFusion/js/web/ej.menu.min.js",
-			"/CroogoFusion/js/web/ej.tab.min.js",
-			"/CroogoFusion/js/web/ej.treeview.min.js",
-			"/CroogoFusion/js/web/ej.waitingpopup.min.js",
-			"/CroogoFusion/js/web/ej.uploadbox.min.js",
-			"/CroogoFusion/js/web/ej.splitter.min.js",
-			"/CroogoFusion/js/web/ej.fileexplorer.min.js",
-			"/CroogoFusion/js/web/ej.grid.min.js",
-//			"/CroogoFusion/js/web/ej.grid.common.min.js",
-//			"/CroogoFusion/js/web/ej.grid.edit.min.js",
-//			"/CroogoFusion/js/web/ej.grid.filter.min.js",
-//			"/CroogoFusion/js/web/ej.grid.selection.min.js",
-//			"/CroogoFusion/js/web/ej.grid.sort.min.js",
+			"/CroogoFusion/js/ej/common/ej.scroller.min.js",
+			"/CroogoFusion/js/ej/common/ej.draggable.min.js",
+			"/CroogoFusion/js/ej/common/ej.data.min.js",
+			"/CroogoFusion/js/ej/web/ej.rte.min.js",
+			"/CroogoFusion/js/ej/web/ej.button.min.js",
+			"/CroogoFusion/js/ej/web/ej.togglebutton.min.js",
+			"/CroogoFusion/js/ej/web/ej.colorpicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.slider.min.js",
+			"/CroogoFusion/js/ej/web/ej.splitbutton.min.js",
+			"/CroogoFusion/js/ej/web/ej.checkbox.min.js",
+			"/CroogoFusion/js/ej/web/ej.radiobutton.min.js",
+			"/CroogoFusion/js/ej/web/ej.dropdownlist.min.js",
+			"/CroogoFusion/js/ej/web/ej.dialog.min.js",
+			"/CroogoFusion/js/ej/web/ej.toolbar.min.js",
+			"/CroogoFusion/js/ej/web/ej.editor.min.js",
+			"/CroogoFusion/js/ej/web/ej.menu.min.js",
+			"/CroogoFusion/js/ej/web/ej.tab.min.js",
+			"/CroogoFusion/js/ej/web/ej.treeview.min.js",
+			"/CroogoFusion/js/ej/web/ej.waitingpopup.min.js",
+			"/CroogoFusion/js/ej/web/ej.uploadbox.min.js",
+			"/CroogoFusion/js/ej/web/ej.splitter.min.js",
+			"/CroogoFusion/js/ej/web/ej.fileexplorer.min.js",
+			"/CroogoFusion/js/ej/web/ej.grid.min.js",
+//			"/CroogoFusion/js/ej/web/ej.grid.common.min.js",
+//			"/CroogoFusion/js/ej/ej/web/ej.grid.edit.min.js",
+//			"/CroogoFusion/js/ej/web/ej.grid.filter.min.js",
+//			"/CroogoFusion/js/ej/web/ej.grid.selection.min.js",
+//			"/CroogoFusion/js/ej/web/ej.grid.sort.min.js",
 			);
 
 		$this->javascriptSet($js);
@@ -471,7 +500,7 @@ public function ListBox ($id,$options = array(),$jsoptions = array()) {
 		$this->styleSet($options);
 		
 		$js = array(
-			"/CroogoFusion/js/web/ej.listbox.min.js",
+			"/CroogoFusion/js/ej/web/ej.listbox.min.js",
 		);
 
 		$this->javascriptSet($js);
@@ -498,22 +527,23 @@ public function schedule ($id,$options = array(),$jsoptions = array()) {
 		//$this->Html->script(array("/CroogoFusion/js/locale/ejSchedule.locale.it-IT"), array("inline"=>false));
 		
 		$js = array(
-			"/CroogoFusion/js/common/ej.scroller.min.js",
-			"/CroogoFusion/js/common/ej.draggable.min.js",
-			"/CroogoFusion/js/common/ej.data.min.js",
-			"/CroogoFusion/js/web/ej.autocomplete.min.js",
-			"/CroogoFusion/js/web/ej.button.min.js",
-			"/CroogoFusion/js/web/ej.radiobutton.min.js",
-			"/CroogoFusion/js/web/ej.checkbox.min.js",
-			"/CroogoFusion/js/web/ej.editor.min.js",
-			"/CroogoFusion/js/web/ej.dialog.min.js",
-			"/CroogoFusion/js/web/ej.dropdownlist.min.js",
-			"/CroogoFusion/js/web/ej.datepicker.min.js",
-			"/CroogoFusion/js/web/ej.timepicker.min.js",
-			"/CroogoFusion/js/web/ej.datetimepicker.min.js",
-			"/CroogoFusion/js/web/ej.recurrenceeditor.min.js",
-			"/CroogoFusion/js/web/ej.schedule.min.js",
-			"/CroogoFusion/js/locale/ej.schedule.locale.it-IT.js"
+			"/CroogoFusion/js/ej/common/ej.scroller.min.js",
+			"/CroogoFusion/js/ej/common/ej.draggable.min.js",
+			"/CroogoFusion/js/ej/common/ej.data.min.js",
+			"/CroogoFusion/js/ej/web/ej.autocomplete.min.js",
+			"/CroogoFusion/js/ej/web/ej.button.min.js",
+			"/CroogoFusion/js/ej/web/ej.radiobutton.min.js",
+			"/CroogoFusion/js/ej/web/ej.checkbox.min.js",
+			"/CroogoFusion/js/ej/web/ej.editor.min.js",
+			"/CroogoFusion/js/ej/web/ej.dialog.min.js",
+			"/CroogoFusion/js/ej/web/ej.tooltip.min.js",
+			"/CroogoFusion/js/ej/web/ej.dropdownlist.min.js",
+			"/CroogoFusion/js/ej/web/ej.datepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.timepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.datetimepicker.min.js",
+			"/CroogoFusion/js/ej/web/ej.recurrenceeditor.min.js",
+			"/CroogoFusion/js/ej/web/ej.schedule.min.js",
+//			"/CroogoFusion/js/ej/locale/ej.schedule.locale.it-IT.js"
 			);
 
 		$this->javascriptSet($js);

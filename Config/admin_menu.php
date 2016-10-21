@@ -51,6 +51,15 @@ CroogoNav::add('SyncFusion', array(
 				),
 			
 		),
+		'signature' => array(
+			'title' => 'Signature',
+			'url' =>  array(
+				'admin' => true,
+				'plugin' => 'croogo_fusion',
+				'controller' => 'demos',
+				'action' => 'signature'
+				),
+		),
 		'slider' => array(
 			'title' => 'Slider',
 			'url' =>  array(
