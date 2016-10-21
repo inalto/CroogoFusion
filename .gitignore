@@ -42,13 +42,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#node_modules
+
+node_modules
 
 #SyncFusion
-webroot/js/common
-webroot/js/cultures
-webroot/js/datavisualization
-webroot/js/mobile
-webroot/js/web
-webroot/js/ej.widget.all.min.js
-webroot/css/mobile
-webroot/css/web
+webroot/js/ej
+webroot/css/ej

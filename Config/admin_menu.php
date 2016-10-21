@@ -59,6 +59,15 @@ CroogoNav::add('SyncFusion', array(
 				'controller' => 'demos',
 				'action' => 'slider'
 				),
+		),
+		'listbox' => array(
+			'title' => 'List Box',
+			'url' =>  array(
+				'admin' => true,
+				'plugin' => 'croogo_fusion',
+				'controller' => 'demos',
+				'action' => 'listbox'
+				),
 		)
 
 

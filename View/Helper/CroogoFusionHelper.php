@@ -464,6 +464,29 @@ $output.=$this->Html->scriptBlock($script, array("inline"=>false));
 
 		return $output;
 	}
+
+
+public function ListBox ($id,$options = array(),$jsoptions = array()) {
+
+		$this->styleSet($options);
+		
+		$js = array(
+			"/CroogoFusion/js/web/ej.listbox.min.js",
+		);
+
+		$this->javascriptSet($js);
+		$this->function="ejListBox";
+		$output="";
+		$script ="$(document).ready(function(){";
+		$script.=array_key_exists('jscript', $jsoptions)?$jsoptions['jscript']:null;
+		$script.="$('#".$this->genId($id)."').".$this->function."(";
+		$script.=array_key_exists('jsobject', $jsoptions)?$jsoptions['jsobject']:null;
+		$script.=");});";
+
+		$output.=$this->Html->scriptBlock($script, array("inline"=>false));
+
+		return $output;
+}
 /*
 *  schedule
 *

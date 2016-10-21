@@ -1,0 +1,29 @@
+{
+  "name": "syncfusion-javascript",
+  "version": "14.3.49",
+  "description": "Bower package of Syncfusion.JavaScript.",
+  "ignore": [
+    ".npmignore",
+    "package.json",
+    "Scripts/jquery.unobtrusive-ajax.min.js",
+    "Scripts/jquery.validate.unobtrusive.min.js"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "jquery-validation": "*",
+    "jsrender": "*",
+    "Microsoft.jQuery.Unobtrusive.Ajax": "*",
+    "Microsoft.jQuery.Unobtrusive.Validation": "*"
+  },
+  "homepage": "https://github.com/syncfusion/essentialjs-bower",
+  "_release": "14.3.49",
+  "_resolution": {
+    "type": "version",
+    "tag": "14.3.49",
+    "commit": "2df8a2a913452e67c3f0e49f2c64e2fd098785a8"
+  },
+  "_source": "https://github.com/syncfusion/essentialjs-bower.git",
+  "_target": "^14.3.49",
+  "_originalSource": "syncfusion-javascript",
+  "_direct": true
+}

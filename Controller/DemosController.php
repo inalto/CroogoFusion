@@ -26,4 +26,7 @@ class DemosController extends CroogoFusionAppController {
 	public function admin_slider() {
 		
 	}
+	public function admin_listbox() {
+		
+	}
 }

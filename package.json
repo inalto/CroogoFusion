@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CroogoFusion",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "syncfusion-javascript": "^14.3.49"
+  }
+}
